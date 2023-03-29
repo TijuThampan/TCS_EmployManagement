@@ -1,6 +1,6 @@
 ﻿namespace TCS.CaseStudy.EmpManagementSystem
 {
-    partial class AddEmployee
+    partial class frmAddEmployee
     {
         /// <summary>
         /// Required designer variable.
@@ -95,7 +95,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(85, 277);
+            this.btnAdd.Location = new System.Drawing.Point(120, 277);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 5;
@@ -143,7 +143,7 @@
             this.comboStatus.Size = new System.Drawing.Size(233, 24);
             this.comboStatus.TabIndex = 11;
             // 
-            // AddEmployee
+            // frmAddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,8 +159,8 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblAddEmployee);
-            this.Name = "AddEmployee";
-            this.Text = "AddEmployee";
+            this.Name = "frmAddEmployee";
+            this.Text = "Add Employee";
             this.Load += new System.EventHandler(this.AddEmployee_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

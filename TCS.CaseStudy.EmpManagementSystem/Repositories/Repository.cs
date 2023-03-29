@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace TCS.CaseStudy.EmpManagementSystem.Repositories
         string _apiPath;
         string _apiStringResult;
         private const string _baseAPIaddress = "https://gorest.co.in/";
-        private const string _bearerToken = "fa114107311259f5f33e70a5d85de34a2499b4401da069af0b1d835cd5ec0d56";
+        private string _bearerToken = ConfigurationManager.AppSettings["APIBearerToken"].ToString();
 
         public enum OperationType
         {
