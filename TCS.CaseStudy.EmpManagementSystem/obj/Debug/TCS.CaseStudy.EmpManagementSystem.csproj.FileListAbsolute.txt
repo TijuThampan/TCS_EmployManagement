@@ -1,0 +1,15 @@
+E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\bin\Debug\TCS.CaseStudy.EmpManagementSystem.exe.config
+E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\bin\Debug\TCS.CaseStudy.EmpManagementSystem.exe
+E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\bin\Debug\TCS.CaseStudy.EmpManagementSystem.pdb
+E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\obj\Debug\TCS.CaseStudy.EmpManagementSystem.csproj.AssemblyReference.cache
+E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\obj\Debug\TCS.CaseStudy.EmpManagementSystem.csproj.SuggestedBindingRedirects.cache
+E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\obj\Debug\TCS.CaseStudy.EmpManagementSystem.Properties.Resources.resources
+E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\obj\Debug\TCS.CaseStudy.EmpManagementSystem.csproj.GenerateResource.cache
+E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\obj\Debug\TCS.CaseStudy.EmpManagementSystem.csproj.CoreCompileInputs.cache
+E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\obj\Debug\TCS.CaseStudy.EmpManagementSystem.exe
+E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\obj\Debug\TCS.CaseStudy.EmpManagementSystem.pdb
+E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\obj\Debug\TCS.CaseStudy.EmpManagementSystem.EmployeeDetails.resources
+E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\bin\Debug\Newtonsoft.Json.dll
+E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\bin\Debug\Newtonsoft.Json.xml
+E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\obj\Debug\TCS.CaseStudy.EmpManagementSystem.csproj.CopyComplete
+E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\obj\Debug\TCS.CaseStudy.EmpManagementSystem.AddEmployee.resources
