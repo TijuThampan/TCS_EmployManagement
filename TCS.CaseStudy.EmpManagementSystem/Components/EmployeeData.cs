@@ -17,6 +17,6 @@ namespace TCS.CaseStudy.EmpManagementSystem.Components
         public string Gender { get; set; }
         public string Status { get; set; }
 
-        #endregion Public propertiies
+        #endregion Public properties
     }
 }
