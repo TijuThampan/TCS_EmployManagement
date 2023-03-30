@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿#region Namespaces
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,19 +10,26 @@ using System.Text;
 using System.Threading.Tasks;
 using TCS.CaseStudy.EmpManagementSystem.APICallHelper;
 using TCS.CaseStudy.EmpManagementSystem.Components;
+#endregion Namespaces
 
 namespace TCS.CaseStudy.EmpManagementSystem.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
+        #region Variables
         private APICall _objAPICall;
-        private APIGetResultMapper<T> _apiGetResultMapper;
+        private APIResultMapper<T> _apiGetResultMapper;
         private APIPostResultMapper _apiPostResultMapper;
         string _apiPath;
         string _apiStringResult;
         private const string _baseAPIaddress = "https://gorest.co.in/";
         private string _bearerToken = ConfigurationManager.AppSettings["APIBearerToken"].ToString();
+        #endregion Variables
 
+        #region OperationType
+        /// <summary>
+        /// Function to identify the type of CRUD operation.
+        /// </summary>
         public enum OperationType
         {
             Add = 0,
@@ -29,12 +37,23 @@ namespace TCS.CaseStudy.EmpManagementSystem.Repositories
             Delete = 2,
             Read = 3
         }
+        #endregion OperationType
 
+        #region Repository
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public Repository()
         {
 
         }
+        #endregion Repository
 
+        #region GetAllData
+        /// <summary>
+        /// To get employee details
+        /// </summary>
+        /// <returns>Employee list data</returns>
         public List<T> GetAllData()
         {
             List<T> lstData = new List<T>();
@@ -45,7 +64,7 @@ namespace TCS.CaseStudy.EmpManagementSystem.Repositories
 
             if (_apiStringResult != null)
             {
-                _apiGetResultMapper = JsonConvert.DeserializeObject<APIGetResultMapper<T>>(_apiStringResult);
+                _apiGetResultMapper = JsonConvert.DeserializeObject<APIResultMapper<T>>(_apiStringResult);
 
                 if (_apiGetResultMapper != null)
                 {
@@ -56,7 +75,15 @@ namespace TCS.CaseStudy.EmpManagementSystem.Repositories
 
             return lstData;
         }
+        #endregion GetAllData
 
+        #region GetDatabyCondition
+        /// <summary>
+        /// To get data using condition
+        /// </summary>
+        /// <param name="hshQueryString"></param>
+        /// <param name="hshRequestHeader"></param>
+        /// <returns>Employee list data</returns>
         public List<T> GetDatabyCondition(Hashtable hshQueryString, Hashtable hshRequestHeader)
         {
             List<T> lstData = new List<T>();
@@ -67,7 +94,7 @@ namespace TCS.CaseStudy.EmpManagementSystem.Repositories
 
             if (_apiStringResult != null)
             {
-                _apiGetResultMapper = JsonConvert.DeserializeObject<APIGetResultMapper<T>>(_apiStringResult);
+                _apiGetResultMapper = JsonConvert.DeserializeObject<APIResultMapper<T>>(_apiStringResult);
 
                 if (_apiGetResultMapper != null)
                 {
@@ -78,7 +105,14 @@ namespace TCS.CaseStudy.EmpManagementSystem.Repositories
 
             return lstData;
         }
+        #endregion GetDatabyCondition
 
+        #region AddData
+        /// <summary>
+        /// To add data into API
+        /// </summary>
+        /// <param name="objData"></param>
+        /// <returns>result message</returns>
         public string AddData(T objData)
         {
             string resultMessage = string.Empty;
@@ -114,7 +148,13 @@ namespace TCS.CaseStudy.EmpManagementSystem.Repositories
 
             return resultMessage;
         }
+        #endregion AddData
 
+        #region MapAPIPath
+        /// <summary>
+        /// To map the path of API
+        /// </summary>
+        /// <param name="operationType"></param>
         private void MapAPIPath(OperationType operationType)
         {
             // As of now All operation have same API path. But we may need this when each domain or operation have different API path
@@ -128,5 +168,6 @@ namespace TCS.CaseStudy.EmpManagementSystem.Repositories
                     break;
             }
         }
+        #endregion MapAPIPath
     }
 }

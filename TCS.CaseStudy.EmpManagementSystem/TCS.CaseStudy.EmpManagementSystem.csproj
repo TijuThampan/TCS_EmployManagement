@@ -57,7 +57,7 @@
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="APICallHelper\APICall.cs" />
-    <Compile Include="APICallHelper\APIGetResultMapper.cs" />
+    <Compile Include="APICallHelper\APIResultMapper.cs" />
     <Compile Include="APICallHelper\APIPostResultMapper.cs" />
     <Compile Include="APICallHelper\APIErrorData.cs" />
     <Compile Include="Components\EmployeeData.cs" />
