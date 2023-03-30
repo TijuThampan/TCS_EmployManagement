@@ -16,6 +16,7 @@ namespace TCS.CaseStudy.EmpManagementSystem.APICallHelper
 {
     public class APICall
     {
+        #region Private variables
         private string _baseAddress;
         private string _apiPath;
         private string _bearerToken;
@@ -24,12 +25,18 @@ namespace TCS.CaseStudy.EmpManagementSystem.APICallHelper
         private object _bodyContent;
         private HttpClient _objClient;
         private string _stringBodyContent;
-        
-        public APICall()
-        {
+        #endregion Private variables
 
-        }
-
+        #region APICall
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="baseAddress"></param>
+        /// <param name="apiPath"></param>
+        /// <param name="bearerToken"></param>
+        /// <param name="hshQueryString"></param>
+        /// <param name="hshRequestHeaders"></param>
+        /// <param name="bodyContent"></param>
         public APICall(string baseAddress, string apiPath, string bearerToken, Hashtable hshQueryString= null, Hashtable hshRequestHeaders = null, object bodyContent = null) 
         {
             _baseAddress = baseAddress;
@@ -39,16 +46,12 @@ namespace TCS.CaseStudy.EmpManagementSystem.APICallHelper
             _hshRequestHeaders = hshRequestHeaders;
             _bodyContent = bodyContent;
         }
+        #endregion APICall
 
         #region GetMethod
         /// <summary>
         /// Get method for getting API response data
         /// </summary>
-        /// <param name="baseAddress"></param>
-        /// <param name="apiPath"></param>
-        /// <param name="hshqueryString"></param>
-        /// <param name="requestHeaders"></param>
-        /// <param name="bearerToken"></param>
         /// <returns>String result from API</returns>
         public string GetMethod()
         {            
@@ -111,6 +114,10 @@ namespace TCS.CaseStudy.EmpManagementSystem.APICallHelper
         }
         #endregion PostMethod
 
+        #region InitHttpClient
+        /// <summary>
+        /// Funtion to initialize HTTP client class
+        /// </summary>
         private void InitHttpClient()
         {
             _objClient = new HttpClient();
@@ -130,6 +137,7 @@ namespace TCS.CaseStudy.EmpManagementSystem.APICallHelper
             }
 
         }
+        #endregion InitHttpClient
 
         #region BindQueryString
         /// <summary>
@@ -157,6 +165,10 @@ namespace TCS.CaseStudy.EmpManagementSystem.APICallHelper
         }
         #endregion BindQueryString
 
+        #region RemoveIDFromContenBody
+        /// <summary>
+        /// To remove ID from content body while inserting/updating to API
+        /// </summary>
         private void RemoveIDFromContenBody() //We don't have to pass the ID in body content to API for Insert and Update
         {           
             var dictionary = new Dictionary<string, object>();
@@ -175,5 +187,6 @@ namespace TCS.CaseStudy.EmpManagementSystem.APICallHelper
             
             _stringBodyContent = JsonConvert.SerializeObject(dictionary);
         }
+        #endregion RemoveIDFromContenBody
     }
 }

@@ -144,18 +144,18 @@ namespace TCS.CaseStudy.EmpManagementSystem
         {
             Hashtable hshSearchCriteria = new Hashtable();
 
-            if ((!string.IsNullOrEmpty(txtSearch.Text)) && (comboSearchCriteria.SelectedItem != null && comboSearchCriteria.SelectedItem.ToString() != string.Empty))
+            if ((!string.IsNullOrEmpty(txtSearch.Text)) && (comboSearchCriteria.SelectedItem != null && comboSearchCriteria.SelectedItem!= string.Empty))
             {
                 Cursor.Current = Cursors.WaitCursor;
                 hshSearchCriteria.Add(comboSearchCriteria.SelectedItem.ToString().ToLower(), txtSearch.Text);
                 GetEmployeeDetails(hshSearchCriteria);
                 Cursor.Current = Cursors.Default;
             }
-            else if (!string.IsNullOrEmpty(txtSearch.Text) && (comboSearchCriteria.SelectedItem.ToString() == string.Empty || comboSearchCriteria.SelectedItem == null))
+            else if (!string.IsNullOrEmpty(txtSearch.Text) && (comboSearchCriteria.SelectedItem == string.Empty || comboSearchCriteria.SelectedItem == null))
             {
                 MessageBox.Show("Please select a search criteria!");
             }
-            else if (string.IsNullOrEmpty(txtSearch.Text) && comboSearchCriteria.SelectedItem.ToString() != string.Empty && comboSearchCriteria.SelectedItem != null)
+            else if (string.IsNullOrEmpty(txtSearch.Text) && comboSearchCriteria.SelectedItem != string.Empty && comboSearchCriteria.SelectedItem != null)
             {
                 MessageBox.Show("Please enter the search text!");
             }
@@ -308,6 +308,7 @@ namespace TCS.CaseStudy.EmpManagementSystem
             lblSearch.Visible= isVisible;
             txtSearch.Visible= isVisible;
             btnSearch.Visible= isVisible;
+            lblSearchCriteriaMessage.Visible= isVisible;
             dgViewEmpDetails.Visible = isVisible;
             btnFirst.Visible= isVisible;
             btnNext.Visible= isVisible;
