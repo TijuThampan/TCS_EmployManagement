@@ -16,7 +16,7 @@ namespace TCS.CaseStudy.EmpManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EmployeeDetails());
+            Application.Run(new EmpDetailFromDB());
         }
     }
 }

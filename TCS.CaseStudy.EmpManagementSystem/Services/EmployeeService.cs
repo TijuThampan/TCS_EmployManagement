@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TCS.CaseStudy.EmpManagementSystem.Components;
+using TCS.CaseStudy.EmpManagementSystem.DataAccessLayer;
 using TCS.CaseStudy.EmpManagementSystem.Repositories;
 #endregion Namespaces
 
@@ -15,6 +16,7 @@ namespace TCS.CaseStudy.EmpManagementSystem.Services
     {
         #region Private variables
         private IRepository<EmployeeData> _objRepository;
+        private IDBFactory<EmployeeData> _objDBFactory;
         #endregion Private variables
 
         #region EmployeeService
@@ -24,6 +26,7 @@ namespace TCS.CaseStudy.EmpManagementSystem.Services
         public EmployeeService() 
         {
             _objRepository = new Repository<EmployeeData>();
+            _objDBFactory = new DBFactory<EmployeeData>();
         }
         #endregion EmployeeService
 
@@ -74,5 +77,27 @@ namespace TCS.CaseStudy.EmpManagementSystem.Services
             return insertMessage;
         }
         #endregion AddEmpoyDetail
+
+        #region GetEmployeeDetailFromDB
+        /// <summary>
+        /// To get employee details in list
+        /// </summary>
+        /// <returns>List of employee details</returns>
+        public List<EmployeeData> GetEmployeeDetailFromDB()
+        {
+            List<EmployeeData> lstEmpData = new List<EmployeeData>();
+            string sql = "Select * from EmployeeData where ID = @id or Name = @name" ; // Add stored procedure or query here 
+
+            _objDBFactory.Parameter = new Hashtable(); // To add Input parameter if have any.
+            _objDBFactory.Parameter.Add("@id", 1); // Add Input parameter like this 
+            _objDBFactory.Parameter.Add("@name", "Test 2");
+            _objDBFactory.OutParam = new Dictionary<string, System.Data.SqlDbType>(); // To add Output parameter if have any.
+            //_objDBFactory.OutParam.Add("", System.Data.SqlDbType.VarChar); //Add ouput parameter like this
+
+            lstEmpData = _objDBFactory.GetData(sql, System.Data.CommandType.Text); // if sotred procedure then, give CommandType.StroredProcedure 
+
+            return lstEmpData;
+        }
+        #endregion GetAllEmployeeDetails
     }
 }
