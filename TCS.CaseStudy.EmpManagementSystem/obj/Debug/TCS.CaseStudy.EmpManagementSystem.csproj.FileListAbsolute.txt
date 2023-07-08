@@ -13,3 +13,4 @@ E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\bin\Debug\Newtonsoft.Json.dl
 E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\bin\Debug\Newtonsoft.Json.xml
 E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\obj\Debug\TCS.CaseStudy.EmpManagementSystem.csproj.CopyComplete
 E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\obj\Debug\TCS.CaseStudy.EmpManagementSystem.frmAddEmployee.resources
+E:\TCS_Case Study\TCS.CaseStudy.EmpManagementSystem\obj\Debug\TCS.CaseStudy.EmpManagementSystem.EmpDetailFromDB.resources
